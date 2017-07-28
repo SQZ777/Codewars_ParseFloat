@@ -24,6 +24,12 @@ namespace Kata
             GetValue(null, "a");
         }
 
+        [TestMethod]
+        public void Input_null_Shoud_Be_null()
+        {
+            GetValue(null, null);
+        }
+
         private static void GetValue(object expected, object input)
         {
             var codewars = new Codewars();
@@ -36,6 +42,8 @@ namespace Kata
     {
         public double? ParseF(object s)
         {
+            if (string.IsNullOrEmpty(s as string))
+                return null;
             try
             {
                 var result = Convert.ToDouble(s);
