@@ -14,13 +14,23 @@ namespace Kata
             var actual = codewars.ParseF(input);
             Assert.AreEqual(null,actual);
         }
+
+        [TestMethod]
+        public void Input_1_Should_Be_1_0d()
+        {
+            var codewars = new Codewars();
+            var input = "1";
+            var actual = codewars.ParseF(input);
+            Assert.AreEqual(1.0d, actual);
+        }
     }
 
     public class Codewars
     {
         public double? ParseF(object s)
         {
-            return null;
+            var result = Convert.ToDouble(s);
+            return result;
         }
     }
 }
