@@ -10,7 +10,7 @@ namespace Kata
         public void Input_a_Shoud_Be_null()
         {
             var codewars = new Codewars();
-            var input = "a";
+            var input = "a100";
             var actual = codewars.ParseF(input);
             Assert.AreEqual(null,actual);
         }
@@ -29,8 +29,15 @@ namespace Kata
     {
         public double? ParseF(object s)
         {
-            var result = Convert.ToDouble(s);
-            return result;
+            try
+            {
+                var result = Convert.ToDouble(s);
+                return result;
+            }
+            catch (FormatException)
+            {
+                return null;
+            }
         }
     }
 }
