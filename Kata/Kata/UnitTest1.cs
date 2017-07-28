@@ -7,7 +7,7 @@ namespace Kata
     public class UnitTest1
     {
         [TestMethod]
-        public void Input_a_Shoud_Be_null()
+        public void Input_a100_Shoud_Be_null()
         {
             GetValue(null, "a100");
         }
@@ -16,6 +16,12 @@ namespace Kata
         public void Input_1_Should_Be_1_0d()
         {
             GetValue(1.0d, "1");
+        }
+
+        [TestMethod]
+        public void Input_a_Shoud_Be_null()
+        {
+            GetValue(null, "a");
         }
 
         private static void GetValue(object expected, object input)
