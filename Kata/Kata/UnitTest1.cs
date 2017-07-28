@@ -20,7 +20,7 @@ namespace Kata
     {
         public double? ParseF(object s)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }
