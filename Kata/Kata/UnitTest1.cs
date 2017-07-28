@@ -9,19 +9,20 @@ namespace Kata
         [TestMethod]
         public void Input_a_Shoud_Be_null()
         {
-            var codewars = new Codewars();
-            var input = "a100";
-            var actual = codewars.ParseF(input);
-            Assert.AreEqual(null,actual);
+            GetValue(null, "a100");
         }
 
         [TestMethod]
         public void Input_1_Should_Be_1_0d()
         {
+            GetValue(1.0d, "1");
+        }
+
+        private static void GetValue(object expected, object input)
+        {
             var codewars = new Codewars();
-            var input = "1";
             var actual = codewars.ParseF(input);
-            Assert.AreEqual(1.0d, actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 
